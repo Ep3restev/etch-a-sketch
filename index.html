@@ -9,7 +9,20 @@
 </head>
 <body>
     <h1>Etch a sketch</h1>
-    <div id="container"></div>
+    <div class="container">
+        <div id="container_box"></div>
+        <div class="container_options">
+            <div class="grid_value_container">
+                <label for="grid_value">Grid size</label>
+                <input type="range" min="4" max="50" id="grid_value">
+                <button id="apply" onclick="changeGrid()">Apply</button>
+            </div>
+           <div class="color_options">
+                <div class="color_button black">Black</div>
+                <div class="color_button random">Random</div>
+           </div>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
