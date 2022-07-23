@@ -2,21 +2,25 @@ const container = document.getElementById("container_box");
 let slider = document.getElementById("grid_value");
 const buttons = document.querySelectorAll(".color_button");
 
-let color; // saves color.
+let color = "black"; // saves color.
 
 
 //Change color.
 buttons.forEach(function(color_button){
     color_button.addEventListener("click", function(e){
         const classChecker = e.currentTarget.classList;
-        console.log(classChecker)
+            console.log(classChecker)
         if(classChecker.contains("black")){
-           color = "black"
-        }else if(classChecker.contains("random")){
-            color = "red"
-        }       
+            color = "black";
+        }else if(classChecker.contains("erase")){
+            color = "white";
+        }else if(classChecker.contains("clear")){
+            changeGrid()
+        }      
     })
 })
+    
+
 
 function createGrid(x){
     for(let i=0; i<x*x; i++){
@@ -26,13 +30,12 @@ function createGrid(x){
         container.appendChild(cells).classList.add("box");
     }
     document.querySelectorAll(".box").forEach(function(box){
-        box.addEventListener('mouseover', function(){
-          box.style.backgroundColor = color;  
-          console.log(color)
+        box.addEventListener("mousemove", function(){
+          box.style.backgroundColor = color;
         })
     })
 }
-createGrid(2)
+createGrid(slider.value)
 
 
 function changeGrid(){

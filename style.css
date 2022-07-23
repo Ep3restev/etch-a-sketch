@@ -42,7 +42,8 @@ body{
 }
 
 .container_options{
-    margin-top: 20px;
+    width: 520px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
@@ -69,4 +70,10 @@ body{
 
 #grid_value{
     width: 80px;
+}
+
+#apply{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
 }
